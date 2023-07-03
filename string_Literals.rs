@@ -26,8 +26,18 @@ fn main(){
     Both statements represent a reference to the same string literal, but the first statement provides more explicit type information.*/
 
 
-
+    //str slice, must also be valid utf-8.
     let crab:&str= "ferris🦀";
+
+    // Common methods of &str:
+
+    // 1. len gets the length of the string literal in bytes (not number of characters).
+    // 2. starts_with/ends_with for basic testing.
+    // 3. is_empty returns true if zero length.
+    // 4. find returns an Option<usize> of the first position of some te
+
+
+
     println!("{0:?}",crab.len()); 
     let first_word= &crab[0..6];
     let second_word = &crab[6..10];
@@ -38,6 +48,24 @@ fn main(){
 
     /*The key difference is that in the first statement, crab is a reference to a string slice, while in the second statement, crab is an owned String object. 
     The first statement is useful when you want to work with string data without taking ownership, while the second statement is useful when you need to own and manipulate the string data. */
+
+
+    //chars in string 
+
+    let message = "hello world".chars().collect::<Vec<char>>();
+    //collecting the characters into the vector 
+    println!("{0:?}",message.len());
+    for i in message.iter(){ 
+        print!("{0:?}",i); 
+    }
+
+    //string concatination 
+
+    let mut hello_world = String::from("hello");
+    hello_world.push_str("world");
+    hello_world  = hello_world + "🧑‍💻";
+
+    println!("{hello_world:?}");  
 
 
 
