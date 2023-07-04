@@ -1,3 +1,4 @@
+
 fn main(){ 
 
     let string_literal:&'static str = "hello world 🦀";
@@ -56,23 +57,36 @@ fn main(){
     //collecting the characters into the vector 
     println!("{0:?}",message.len());
     for i in message.iter(){ 
-        print!("{0:?}",i); 
+        println!("{0:?}",i); 
     }
 
     //string concatination 
 
     let mut hello_world = String::from("hello");
     hello_world.push_str("world");
-    hello_world  = hello_world + "🧑‍💻";
+    hello_world  = hello_world + "🦀";
 
     println!("{hello_world:?}");  
 
+    let upper_case = hello_world.trim().to_uppercase(); 
+    println!("{upper_case:?}");
+
+    //borrowing the values to &str 
+
+    say_example("hello world");
+    say_example(&String::from("Example"));
 
 
+    //Building the string 
 
+    let building = ["h","i","ferris"];
+    let concat = building.concat();
+    let join = building.join(",");
 
-
+    println!("{0:?}\n {1:?}",concat,join);
 }
 
 
-
+fn say_example(msg:&str){ 
+    println!("{0:?}",msg.to_uppercase())
+}
