@@ -84,9 +84,22 @@ fn main(){
     let join = building.join(",");
 
     println!("{0:?}\n {1:?}",concat,join);
+
+    // string conversion 
+
+    let number =128;
+    let number_to_string = number.to_string(); 
+    let parsed_number = string_to_int(&number_to_string).unwrap();
+    println!("string:{0:?},numeric:{1:?}",number_to_string,parsed_number); 
+
+
 }
 
 
 fn say_example(msg:&str){ 
     println!("{0:?}",msg.to_uppercase())
+}
+
+fn string_to_int(string:&str)->Result<i32, std::num::ParseIntError>{ 
+    return string.parse::<i32>();
 }
