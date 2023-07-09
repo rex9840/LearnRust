@@ -41,6 +41,22 @@ impl Animal{
 }
 
 
+//trait : used for aggrigation(has a relation that means school has a teacher ->ie teacher is an indipendent entiy and can associate oneself with different schools(ie class)) and method sharing among the struct
+
+trait Train{ 
+    fn sit(&self)->String;
+}
+
+
+impl Train for Animal { 
+    fn sit(&self)->String{ 
+        return format!("wag its tail and {0}",self.get_sound())
+    }
+}
+
+
+
+
 fn main(){ 
     let sound = "woof WOOF";
     let name ="Tiger"; 
@@ -49,7 +65,8 @@ fn main(){
         sound:String::from(sound).to_lowercase(),
     };
 
-    println!("{{\nname:{1:?},\nsound:{0:?}\n}}",dog.get_sound(),dog.name);
+    let result:String = format!("{{\nname:{1:?},\nsound:{0:?},\n{2:?}\n}}",dog.get_sound(),dog.name,dog.sit());
+    println!("{0}",result)
 
 }
 
