@@ -35,8 +35,17 @@ impl NoiseMaker for SeaCreature
     {
         println!("{0:?}",&self.get_sound());
     }
+
+    fn make_alot_of_noise(&self)
+    {
+            for _ in 0..3
+            {
+                &self.make_noise();
+            }
+    }
     
 }
+
 
 
 fn main()
