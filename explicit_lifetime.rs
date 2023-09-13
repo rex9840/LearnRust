@@ -10,16 +10,18 @@ struct Foo {
 
 }
 
+//life time of the datatypes 
+//defining a struct called LifeTime 
+struct LifeTime<'a>{
+    x:&'a i32 
+}
+
 //single life time example 
 fn do_something_single<'a>(foo: &'a Foo) -> &'a i32 { 
     return &foo.x;
 }
 
-
-
-
 //multiple life time example 
-
 
 // foo_b and the return value share the same lifetime
 // foo_a has an unrelated lifetime
@@ -28,13 +30,8 @@ fn do_something_multiple<'a,'b>(foo_a: &'a Foo, foo_b: &'b Foo)-> &'b i32 {
     println!("{}",foo_a.x);
     println!("{}",foo_b.x); 
     return &foo_b.x; 
+//lifetime 'b bounds both do_something_multiple and foo_b which means foo_b exits until do_something_multiple exits 
 
-}
-
-//life time of the datatypes 
-
-struct LifeTime<'a>{
-    x:&'a i32 
 }
 
 
@@ -72,9 +69,6 @@ fn main()
     };
 
     println!("{}",datatype_lifetime_a.x); 
-
-
-
 
 }
 

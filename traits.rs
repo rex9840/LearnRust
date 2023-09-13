@@ -45,6 +45,8 @@ impl NoiseMaker for SeaCreature
     
 }
 
+//dispatching is an oop paradigm where we call a method on an object and the compiler decides which method to call based on the type of the object.
+
 // static and dyanmic dispatch where dynamic dispactch dosent know the  instances we are using so we use  traits objects.
 //use of dyn keyword.
 
