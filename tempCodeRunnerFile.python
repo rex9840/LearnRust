@@ -1,7 +1,0 @@
-import requests 
-
-for port in range(500):
-    response = requests.get("https://http://103.175.192.30:{port}")
-    print(f"{port}: {response.status_code}")
-
-
