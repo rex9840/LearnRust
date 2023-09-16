@@ -24,5 +24,10 @@ match result2 {
 }
 
 
+//creating a panic and returning the error message 
+
+let result  = divide(100,0).unwrap();
+println!("{:?}",result); 
+
 }
 
