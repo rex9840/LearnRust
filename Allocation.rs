@@ -58,6 +58,6 @@ impl  Deref for Pie
 fn main()
 { 
     let  p =   Pie::new(); 
-    println!("LENGTH : {0:?}", std::mem::size_of_val(&p));
+    println!("SIZE : {0:?}", std::mem::size_of_val(&p));
     println!("DEREFERENCE : {0:?}", *p);
 }
