@@ -1,6 +1,8 @@
 use std::cell::RefCell;
 use std::rc::Rc; 
 
+
+
 struct Person
 { 
     tasks: u8
@@ -24,8 +26,8 @@ struct Worker
     person:Rc<RefCell<Person>>
 }
 
-//Rc(refernce counter) collective ownership 
-//RefCell is a datastructure which gives us the mutable access to imuutable data 
+//Rc(refernce counter) smart pointer for collective ownership 
+//RefCell is a datastructure of smart pointer which gives us the mutable access to imuutable data 
 
 
 impl Worker
