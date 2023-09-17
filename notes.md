@@ -38,14 +38,15 @@
 
 
 
-**prelud**: 
-        - rust has a prelude which is imported by default in every rust program 
-        - prelude contains the most common used types,traits and functions
-        - prelude is imported by `use std::prelude::*` 
+**prelude**: 
+- rust has a prelude which is imported by default in every rust program 
+- prelude contains the most common used types,traits and functions
+- prelude is imported by `use std::prelude::*` 
         -`std::prelude::*` is automatically available to every part of Rust. That is the case for Vec and Box but others as well (Option, Copy, etc.).
 
-*Creating your own prelude* 
-    -It's common for library to have its own prelude module as a starting point for where users should import all of the most common data structures for using your library (e.g use my_library::prelude::*). It doesn't automatically get used in programs/libraries that uses crates, but it's a good convention to follow so people can know where to start.
+**Creating your own prelude:** 
+
+- It's common for library to have its own prelude module as a starting point for where users should import all of the most common data structures for using your library (e.g `use my_library::prelude::*`). It doesn't automatically get used in programs/libraries that uses crates, but it's a good convention to follow so people can know where to start.
 
 
 
