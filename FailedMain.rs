@@ -30,7 +30,7 @@ impl Pie
 
 fn main()->Result<(),Box<dyn Error>>
 {
-    let heap_pie = Box::new(Pie); 
+    let heap_pie = Box::new(Pie);  
     heap_pie.eat()?;
     Ok(()) 
 }
